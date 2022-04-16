@@ -40,7 +40,12 @@ function game(){
     let playerPoints = computerPoints = 0;
     for(let i =0 ; i<5; i++){
         const computerSelection = computerPlay();
-        const playerSelection = prompt("rock or paper or scissors ?").toLowerCase();
+        let playerSelection = prompt("rock or paper or scissors ?");
+        if (playerSelection==null){
+            alert("You cancelled the game !");
+            return;
+        }
+        playerSelection=playerSelection.toLowerCase();
         if(playerSelection==="rock" || playerSelection==="scissors" || playerSelection==="paper"){
             console.log(`You choose ${playerSelection} and Computer choose ${computerSelection}`);
             let res = playRound(playerSelection,computerSelection);
