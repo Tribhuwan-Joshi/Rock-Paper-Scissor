@@ -3,3 +3,4 @@ function computerPlay(){
     let indx = Math.floor(Math.random()*3);
     return res[indx];
 }
+
