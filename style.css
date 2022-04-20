@@ -1,0 +1,52 @@
+body{
+    margin: 0;
+}
+
+.container{
+    display: flex;
+    justify-content: space-around;
+    height: 20vw;
+    align-items: center;
+    background-color: rgb(231, 152, 152);
+    border: 3px solid black;
+    margin-bottom: 30px;
+    
+}
+
+.container button{
+    height: 150px;
+    width: 150px;
+    text-align: center;
+    color: rgb(7, 7, 7);
+    background-color: rgb(229, 185, 185);
+    font-size: 16px;
+    
+}
+
+h3{
+    text-align: center;
+    margin: 30px;
+}
+
+.result , .final{
+    font-size: 20px;
+}
+
+.result{
+    margin: 30px;
+    display: flex;
+    justify-content:space-around;
+    
+    
+}
+.result div , .final div {
+    width: 500px;
+    text-align: center;
+}
+
+.final{
+    display: flex;
+    justify-content: space-around;
+    margin: 30px;
+  
+}
