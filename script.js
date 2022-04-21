@@ -67,7 +67,7 @@ function playRound(playerSelection , computerSelection){
 // game();
 
 
-let rounds = 0;
+
 let yourPoints = 0;
 let computerPoints = 0;
 
@@ -76,9 +76,34 @@ const buttons = document.querySelectorAll('button');
 const youChoose = document.querySelector('.you');
 const compChoose = document.querySelector(".computer");
 const win = document.querySelector(".win");
-console.log(youChoose.textContent)
+
+const compPoint = document.querySelector(".computer-points");
+const yourPoint = document.querySelector(".your-points");
+
+const winner = document.querySelector(".winner");
+
+
+function gameEnd(){
+    let whoWin = (computerPoints>yourPoints)?"Computer":
+    (yourPoints>computerPoints)?"You":"It's a Draw !";
+    
+   
+    winner.textContent+=whoWin;
+
+    
+    
+
+   
+    computerPoints = yourPoints = 0;
+    
+    
+
+}
+
 
 function addText(e){
+
+      
     youChoose.textContent = "You Choose - ";
     compChoose.textContent = "Computer Choose - ";
     compChoice = computerPlay();
@@ -86,7 +111,24 @@ function addText(e){
     youChoose.textContent+=e.target.textContent;
     compChoose.textContent+=compChoice;
     let result = playRound(e.target.className,compChoice);
+
+    if(result.includes("You")) yourPoints++;
+    else if (result.includes("Computer")) computerPoints++;
+
+
+    
+winner.textContent = "Round Winner - "
+    compPoint.textContent = "Computer Points - ";
+    yourPoint.textContent = "Your Points - ";
+    compPoint.textContent+=computerPoints;
+    yourPoint.textContent +=yourPoints;
+
+ 
+
     win.textContent = result;
+    if(computerPoints===5 || yourPoints===5) gameEnd();
+
+     
    
 
 }
