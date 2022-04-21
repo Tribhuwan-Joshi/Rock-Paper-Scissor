@@ -35,36 +35,6 @@ function playRound(playerSelection , computerSelection){
     }
 }
 
-/* Game function will call playRound function and simulate the game 5 times */
-// function game(){
-//     let playerPoints = computerPoints = 0;
-//     for(let i =0 ; i<5; i++){
-//         const computerSelection = computerPlay();
-//         // let playerSelection = prompt("rock or paper or scissors ?");
-//         playerSelection=playerSelection.toLowerCase();
-//         if(playerSelection==="rock" || playerSelection==="scissors" || playerSelection==="paper"){
-//             console.log(`You choose ${playerSelection} and Computer choose ${computerSelection}`);
-//             let res = playRound(playerSelection,computerSelection);
-//             console.log(res);
-
-//             if(res.includes("Win"))playerPoints++ ;
-//             else if(res.includes("Lose")) computerPoints++;
-            
-
-//         }
-//         else{
-//         console.log("Please make a valid choice");
-//         }
-        
-//     }
-//     console.log("player points ", playerPoints, "computer points " ,computerPoints);
-//     (computerPoints>playerPoints)?console.log("Computer win the Game :( "):
-//     (playerPoints>computerPoints)?console.log("You win the Game :) "):
-//     console.log("Its a draw.");
-
-// }
-
-// game();
 
 
 
@@ -100,6 +70,7 @@ function gameEnd(){
 
 }
 
+/* Add script to manipulate DOM */
 
 function addText(e){
 
@@ -138,6 +109,7 @@ winner.textContent = "Round Winner - "
 
 
 
+/* add event listener to every button */
 
 buttons.forEach(button => button.addEventListener('click',addText));
 
